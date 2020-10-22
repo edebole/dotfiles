@@ -1,0 +1,47 @@
+{
+  "files.autoSave": "off",
+  "files.insertFinalNewline": true,
+  "window.zoomLevel": 0,
+  "editor.tabSize": 2,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 80,
+  "editor.renderWhitespace": "all",
+  "editor.fontSize": 15,
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "300",
+  "editor.formatOnPaste": true,
+  "editor.minimap.enabled": true,
+  "editor.mouseWheelZoom": true,
+  "editor.tabCompletion": "on",
+  "workbench.startupEditor": "newUntitledFile",
+  "telemetry.enableCrashReporter": false,
+  "breadcrumbs.enabled": true,
+  "html.format.wrapLineLength": 80,
+  "terminal.integrated.shell.linux": "/bin/zsh",
+  "editor.fontFamily": "'SF Mono','FiraMono Nerd Font Mono','Hack','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "workbench.colorTheme": "One Dark Pro",
+  "extensions.ignoreRecommendations": true,
+  "editor.suggestSelection": "first",
+  "workbench.iconTheme": "eq-material-theme-icons-darker",
+  "bracket-pair-colorizer-2.colors": [
+    "Gold",
+    "Orchid",
+    "LightSkyBlue",
+    "Blue"
+  ],
+  "editor.renderControlCharacters": false,
+  "emmet.includeLanguages": {
+    "erb": "html"
+  },
+  "files.associations": {
+    "*.html.erb": "html"
+  },
+  "ruby.lint": {
+    "standard": {
+      "useBundler": true,
+    }
+  },
+  "workbench.colorCustomizations": {}
+}

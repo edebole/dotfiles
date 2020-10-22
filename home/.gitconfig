@@ -1,0 +1,17 @@
+[user]
+  email = estebandebole@gmail.com
+  name = esteban
+[core]
+  editor = vim
+  pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+[interactive]
+  diffFilter = delta --color-only
+[pull]
+  rebase = true
+[alias]
+  shit = checkout -- .
+  unstage = clean -df
+  quicklog = log --pretty=format:'%Cblue%h %Cred%cD %Creset%cn %Cgreen%s%Creset' --date-order --graph
+  biglog = log --oneline --decorate --graph
+  diffname = diff --name-only
+  who = shortlog -s --

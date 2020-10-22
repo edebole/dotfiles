@@ -1,0 +1,7 @@
+rofi.theme: ./config.rasi
+rofi.modi: drun,window,run
+rofi.lines: 7
+rofi.font: SF Pro Text Regular 11
+rofi.show-icons: true
+rofi.icon-theme: Papirus
+rofi.dpi: 100
