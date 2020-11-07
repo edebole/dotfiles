@@ -1,0 +1,37 @@
+alias SDN="sudo shutdown now"
+alias SR="sudo reboot"
+alias SS="sudo systemctl"
+alias yt="youtube-dl --add-metadata -ic" # Download video link
+alias yta="youtube-dl --add-metadata -xic" # Download only audio link
+alias ss="ss -tulpn"
+alias myip="curl ipinfo.io"
+alias ip='ip -color=auto'
+alias wifi="nmtui"
+alias wifiup="nmcli r wifi on"
+alias wifidown="nmcli r wifi off"
+alias connect="nmcli c up"
+alias disconnect="nmcli c down"
+alias ls="exa -lhg --color=always --group-directories-first"
+alias la="ls -lah"
+alias cp="cp -gRi"
+alias mv="mv -gi"
+alias vim="nvim"
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias open="xdg-open"
+alias ps="ps auxf"
+alias cat="ccat"
+alias cleanup="sudo pacman -Rns $(pacman -Qtdq)"
+alias unlock="sudo rm /var/lib/pacman/db.lck"
+alias jctl="journalctl -p 3 -xb"
+alias d="docker"
+alias dc="docker-compose"
+alias sz="source ~/.zshrc"
+alias irbl="irb -I . -r"
+alias weather="curl wttr.in/La_Plata"
+alias rcon="python ~/git/cs1.6-server-docker/socket/rcon.py"
+alias dolar="ruby scripts/dolar_today.rb all"
+
+
+
+

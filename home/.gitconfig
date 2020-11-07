@@ -11,6 +11,7 @@
 [alias]
   shit = checkout -- .
   unstage = clean -df
+  trash = "!git shit ; git unstage"
   quicklog = log --pretty=format:'%Cblue%h %Cred%cD %Creset%cn %Cgreen%s%Creset' --date-order --graph
   biglog = log --oneline --decorate --graph
   diffname = diff --name-only
