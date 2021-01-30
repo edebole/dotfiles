@@ -1,6 +1,7 @@
 alias SDN="sudo shutdown now"
 alias SR="sudo reboot"
 alias SS="sudo systemctl"
+alias SSS="solargraph socket"
 alias yt="youtube-dl --add-metadata -ic" # Download video link
 alias yta="youtube-dl --add-metadata -xic" # Download only audio link
 alias ss="ss -tulpn"
@@ -13,9 +14,11 @@ alias connect="nmcli c up"
 alias disconnect="nmcli c down"
 alias ls="exa -lhg --color=always --group-directories-first"
 alias la="ls -lah"
-alias cp="cp -gRi"
-alias mv="mv -gi"
+alias cp="cp -gRriv"
+alias mv="mv -giv"
+alias mkdir="mkdir -vp"
 alias vim="nvim"
+alias gff="git cc"
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias open="xdg-open"

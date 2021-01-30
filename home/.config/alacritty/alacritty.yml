@@ -1,8 +1,6 @@
 # Window Customization
 window:
-  dimensions:
-    columns: 140
-    lines: 38
+  dynamic_title: true
   padding:
     x: 15
     y: 15
@@ -11,17 +9,17 @@ scrolling:
   history: 10000
   multiplier: 3
 background_opacity: .95
-dynamic_title: true
+startup_mode: maximized
 
 # Font Customization
 font:
   normal:
-    family: hack 
+    family: hack
     style: Regular
-  bold: 
+  bold:
     family: hack
     style: Bold
-  italic: 
+  italic:
     family: hack
     style: Italic
   size: 12

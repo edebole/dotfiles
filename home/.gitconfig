@@ -9,6 +9,7 @@
 [pull]
   rebase = true
 [alias]
+  cc = !git checkout "$(git branch | fzf | tr -d '[:space:]')"
   shit = checkout -- .
   unstage = clean -df
   trash = "!git shit ; git unstage"
