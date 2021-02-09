@@ -45,5 +45,17 @@
 		"key": "ctrl+shift+down",
 		"command": "-editor.action.insertCursorBelow",
 		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+b",
+		"command": "java.workspace.compile"
+	},
+	{
+		"key": "shift+alt+b",
+		"command": "-java.workspace.compile"
+	},
+	{
+		"key": "alt+f",
+		"command": "workbench.action.files.saveFiles"
 	}
 ]

@@ -16,5 +16,5 @@ plugins=(
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -d /usr/share/chruby ] && source /usr/share/chruby/chruby.sh
+
 [ -d /usr/share/chruby ] && source /usr/share/chruby/auto.sh
-RUBIES+=(~/.rubies/*)

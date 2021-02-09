@@ -17,3 +17,5 @@
   biglog = log --oneline --decorate --graph
   diffname = diff --name-only
   who = shortlog -s --
+[init]
+	defaultBranch = main
