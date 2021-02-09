@@ -2,10 +2,15 @@
 create_symbolic_links(){
   BASE_DIR=`pwd`
   FILES=(`find home -type f`)
+  USR='edebole'
   echo "CREATING SYMBOLIC LINKS"
   for file in "${FILES[@]}"
   do
-    rm -f $file
-    sudo -H -u edebole bash -c ln -nfs $BASE_DIR/${file} $HOME${file/home}
+    mkdir -p "/home/$USR${file/home}"
+    ln -nvfs $BASE_DIR/${file} "/home/$USR${file/home}"
   done
+}
+
+blue(){
+  echo -e "\e[34m-----------------$1-------------------\e[0m"
 }
