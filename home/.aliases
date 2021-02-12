@@ -34,7 +34,17 @@ alias irbl="irb -I . -r"
 alias weather="curl wttr.in/La_Plata"
 alias rcon="python ~/git/cs1.6-server-docker/socket/rcon.py"
 alias dolar="ruby scripts/dolar_today.rb all"
-
-
+alias -g Z='| fzf'
+alias glO=forgit::log
+alias gD=forgit::diff
+alias gA=forgit::add
+alias grH=forgit::reset::head
+alias gi=forgit::ignore
+alias gcf=forgit::restore
+alias gclean2=forgit::clean
+alias gsS=forgit::stash::show
+alias gcP=forgit::cherry::pick
+alias grB=forgit::rebase
+alias gcB=forgit::checkout
 
 

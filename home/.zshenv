@@ -5,4 +5,6 @@ export PATH="$HOME/scripts/bin:$PATH"
 export EDITOR="vim"
 export SERVER_MAC="00:1f:c6:af:da:b9"
 export UPDATE_ZSH_DAYS=7
+export FZF_COMPLETION_TRIGGER='**'
+export FORGIT_NO_ALIASES="true"
 RUBIES+=(~/.rubies/*)
