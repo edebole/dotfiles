@@ -1,0 +1,119 @@
+{
+  "files.autoSave": "off",
+  "files.insertFinalNewline": true,
+  "window.zoomLevel": 1,
+  "editor.tabSize": 2,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 80,
+  "editor.renderWhitespace": "all",
+  "editor.fontSize": 15,
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "300",
+  "editor.formatOnPaste": true,
+  "editor.minimap.enabled": true,
+  "editor.mouseWheelZoom": true,
+  "editor.tabCompletion": "on",
+  "workbench.startupEditor": "newUntitledFile",
+  "telemetry.enableCrashReporter": false,
+  "breadcrumbs.enabled": true,
+  "html.format.wrapLineLength": 80,
+  "terminal.integrated.shell.linux": "/bin/zsh",
+  "editor.fontFamily": "'SF Mono','FiraMono Nerd Font Mono','Hack','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "workbench.colorTheme": "Nord",
+  "extensions.ignoreRecommendations": true,
+  "editor.suggestSelection": "first",
+  "workbench.iconTheme": "eq-material-theme-icons-darker",
+  "bracket-pair-colorizer-2.colors": [
+    "Gold",
+    "Orchid",
+    "LightSkyBlue",
+    "Blue"
+  ],
+  "editor.renderControlCharacters": false,
+  "emmet.includeLanguages": {
+    "erb": "html"
+  },
+  "files.associations": {
+    "*.html.erb": "html"
+  },
+  "ruby.useBundler": true, //run non-lint commands with bundle exec
+  "ruby.useLanguageServer": true, // use the internal language server (see below)
+  "ruby.lint": {
+    "standard": true
+  },
+  "ruby.format": "standard",
+  "solargraph.transport": "external",
+  "solargraph.externalServer": {
+    "host": "localhost",
+    "port": 7658
+  },
+  "gitlens.currentLine.format": "${author}, ${agoOrDate} ",
+  "gitlens.currentLine.scrollable": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.views.repositories.enabled": false,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true
+  },
+  "projectManager.git.baseFolders": [
+    "/home/edebole/sinaptia",
+    "/home/edebole/2020"
+  ],
+  "java.configuration.checkProjectSettingsExclusions": false,
+  "launch": {
+    // ln -nfs /home/edebole/.rbenv/shims/rdebug-ide /usr/local/bin/
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Rails server",
+        "type": "Ruby",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        "program": "${workspaceRoot}/bin/rails",
+        "args": [
+          "server"
+        ]
+      },
+      {
+        "name": "Dashboard server",
+        "type": "Ruby",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        // "showDebuggerOutput": true,
+        "program": "/home/edebole/.gem/ruby/2.5.1/bin/bundle",
+        "args": [
+          "exec",
+          "rackup",
+          "web.ru"
+        ],
+        "env": {
+          "GEM_PATH": "/home/edebole/.gem/ruby/2.5.1"
+        }
+      },
+      {
+        "name": "Device api",
+        "type": "Ruby",
+        "request": "launch",
+        "cwd": "${workspaceRoot}",
+        // "showDebuggerOutput": true,
+        "program": "/home/edebole/.gem/ruby/2.5.1/bin/bundle",
+        "args": [
+          "exec",
+          "rackup",
+          "-p",
+          "9090",
+          "devices_api.ru"
+        ],
+        "env": {
+          "GEM_PATH": "/home/edebole/.gem/ruby/2.5.1"
+        }
+      }
+    ]
+  },
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "diffEditor.ignoreTrimWhitespace": false
+}

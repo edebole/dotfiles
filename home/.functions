@@ -1,0 +1,145 @@
+### Colors
+declare -A COLORS
+COLORS[black]="30"
+COLORS[red]="31"
+COLORS[green]="32"
+COLORS[yellow]="33"
+COLORS[blue]="34"
+COLORS[magenta]="35"
+COLORS[cyan]="36"
+COLORS[light_gray]="37"
+COLORS[dark_gray]="90"
+COLORS[light_red]="91"
+COLORS[light_green]="92"
+COLORS[light_yellow]="93"
+COLORS[light_blue]="94"
+COLORS[light_magenta]="95"
+COLORS[light_cyan]="96"
+COLORS[white]="97"
+
+### ARCHIVE EXTRACTION
+# usage: ex <file>
+ex() {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   unzstd $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# Create new directories and enter the first one
+mkd() {
+    if [ -n "$*" ]; then
+        mkdir -p "$@" && cd "$@"
+    fi
+}
+
+# Ban an IP
+ban() {
+  if [ "`id -u`" == "0" ] ; then
+    iptables -A INPUT -s $1 -j DROP
+  else
+    sudo iptables -A INPUT -s $1 -j DROP
+  fi
+}
+
+# Convert a video to a gif
+gif-ify() {
+  if [[ -n "$1" && -n "$2" ]]; then
+    ffmpeg -i $1 -pix_fmt rgb24 temp.gif
+    convert -layers Optimize temp.gif $2
+    rm temp.gif
+  else
+    echo "proper usage: gif-ify <input_movie.mov> <output_file.gif>. You DO need to include extensions."
+  fi
+}
+
+c() {
+  echo "$@" | bc -l
+}
+
+killport() {
+  lsof -i :$1 | awk 'END { print $2 }' | xargs kill -9
+}
+
+whoisport() {
+  pid=$(fuser $1/tcp 2> /dev/null | awk 'END { print $1 }')
+  if [[ -z "${pid// }" ]]; then
+    echo "port is not used"
+  else
+    ls -l /proc/$pid/exe
+  fi
+}
+
+log() {
+  echo -e "[$(date +'%a %F %T %z')] ${@}"
+}
+
+color() {
+  echo -e "\e[$1m$2\e[0m"
+}
+
+black() {
+  color $COLORS[black] $1
+}
+red() {
+  color $COLORS[red] $1
+}
+green() {
+  color $COLORS[green] $1
+}
+yellow() {
+  color $COLORS[yellow] $1
+}
+blue() {
+  color $COLORS[blue] $1
+}
+magenta() {
+  color $COLORS[magenta] $1
+}
+cyan() {
+  color $COLORS[cyan] $1
+}
+light_gray() {
+  color $COLORS[light_gray] $1
+}
+dark_gray() {
+  color $COLORS[dark_gray] $1
+}
+light_red() {
+  color $COLORS[light_red] $1
+}
+light_green() {
+  color $COLORS[light_green] $1
+}
+light_yellow() {
+  color $COLORS[light_yellow] $1
+}
+light_blue() {
+  color $COLORS[light_blue] $1
+}
+light_magenta() {
+  color $COLORS[light_magenta] $1
+}
+light_cyan() {
+  color $COLORS[light_cyan] $1
+}
+white() {
+  color $COLORS[white] $1
+}

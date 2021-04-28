@@ -1,0 +1,43 @@
+[user]
+  email = estebandebole@gmail.com
+  name = esteban
+[core]
+  editor = nvim
+  pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+[interactive]
+  diffFilter = delta --color-only
+[pull]
+  rebase = true
+[alias]
+  # Navigate to branches using FZF
+  cc = !git checkout "$(git branch | fzf | tr -d '[:space:]')"
+  # Add files using FZF
+  af = "!add_fzf() { git status -s | awk '{print $2}' | fzf -m | xargs git add; }; add_fzf"
+  # Add files using FZF and immediately commit them
+  afmend = "!add_fzf_amend() { git status -s | awk '{print $2}' | fzf -m | xargs git add && git amend; }; add_fzf_amend"
+  # git reword -- edit the last commit message
+  reword = commit --amend --only -v
+  # git undo, for unding an accidental git amend/reword/commit; use with care
+  undo = reset HEAD@{1}
+  # use git ci --fixup <HASH>/git ci --squash <HASH> and then git autosquash
+  # NB: --autosquash doesn't work without -i :/
+  autosquash = rebase -i --autosquash -r
+  # used by other aliases such as 'git list-merged-branches' or 'git up'
+  main-branch = "!f() { git config alias.main-branch.name \"$@\" || echo master; }; f"
+  # let's do code review!
+  branch-diff = !git diff $(git main-branch)@{u}...
+  review = "!nvim +'set ft=diff bt=nofile|exe \"0r !git branch-diff -p --stat\"|1|exe \"silent file\" escape(printf(\"git diff of the %s branch\", systemlist(\"git branch-name\")[0]), \" |\\\\\")'"
+  # show current commit SHA; try also git sha --short and git sha [--short] somebranch
+  sha = "!f() { rev=HEAD; for a; do case \"$a\" in -*) ;; *) rev=;; esac; done; git rev-parse \"$@\" $rev; }; f"
+  # open the repository in a browser
+  url = config remote.origin.url
+  open-url = !xdg-open $(git url)
+  shit = checkout -- .
+  unstage = clean -df
+  trash = "!git shit ; git unstage"
+  quicklog = log --pretty=format:'%Cblue%h %Cred%cD %Creset%cn %Cgreen%s%Creset' --date-order --graph
+  biglog = log --oneline --decorate --graph
+  diffname = diff --name-only
+  who = shortlog -s --
+[init]
+  defaultBranch = main

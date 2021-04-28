@@ -1,0 +1,100 @@
+[global_config]
+  dbus = False
+  focus = mouse
+  handle_size = 0
+  window_state = maximise
+  borderless = True
+  always_on_top = False
+  sticky = True
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
+  suppress_multiple_term_dialog = True
+  title_font = SF Mono Text Regular weight=250 Italic 12
+  title_inactive_bg_color = "#4C566A"
+  title_inactive_fg_color = "#D8DEE9"
+  title_receive_bg_color = "#8FBCBB"
+  title_receive_fg_color = "#2E3440"
+  title_transmit_bg_color = "#88C0D0"
+  title_transmit_fg_color = "#2E3440"
+[keybindings]
+  split_vert = <Primary><Shift>l
+[profiles]
+  [[default]]
+    background_color = "#101421"
+    background_darkness = 1
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = SF Mono Bold 12
+    foreground_color = "#fffbf6"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scroll_on_keystroke = False
+    scrollback_infinite = True
+    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    use_system_font = False
+  [[FirefoxDev]]
+    background_color = "#0e1011"
+    background_darkness = 0.93
+    background_type = transparent
+    cursor_color = "#708284"
+    font = SF Mono Bold 11
+    foreground_color = "#7c8fa4"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scroll_on_keystroke = False
+    scrollback_infinite = True
+    palette = "#002831:#e63853:#5eb83c:#a57706:#359ddf:#d75cff:#4b73a2:#dcdcdc:#001e27:#e1003f:#1d9000:#cd9409:#006fc0:#a200da:#005794:#e2e2e2"
+    use_system_font = False
+  [[Jellybeans]]
+    background_color = "#121212"
+    background_darkness = 0.97
+    background_type = transparent
+    cursor_color = "#ffa560"
+    font = SF Mono Bold 11
+    foreground_color = "#dedede"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scroll_on_keystroke = False
+    scrollback_infinite = True
+    palette = "#929292:#e27373:#94b979:#ffba7b:#97bedc:#e1c0fa:#00988e:#dedede:#bdbdbd:#ffa1a1:#bddeab:#ffdca0:#b1d8f6:#fbdaff:#1ab2a8:#ffffff"
+    use_system_font = False
+  [[Material-Ocean]]
+    background_color = "#0f111a"
+    background_darkness = 0.97
+    background_type = transparent
+    cursor_color = "#ffcc00"
+    cursor_color_fg = False
+    font = SF Mono Bold 11
+    foreground_color = "#8f93a2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scroll_on_keystroke = False
+    scrollback_infinite = True
+    palette = "#2e3436:#ff5370:#c3e88d:#ffcb6b:#82aaff:#c792ea:#89ddff:#d3d7cf:#555753:#f07178:#c3e88d:#f78c6c:#729fcf:#bb80b3:#89ddff:#eeeeec"
+    use_system_font = False
+  [[Rose Pine]]
+    background_color = "#191724"
+    background_darkness = 0.97
+    background_type = transparent
+    cursor_color = "#9ccfd8"
+    font = SF Mono Bold 11
+    foreground_color = "#e0def4"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scroll_on_keystroke = False
+    scrollback_infinite = True
+    palette = "#26233A:#eb6f91:#9ccfd8:#f6c177:#31748f:#65618d:#c4a7e7:#d3d7cf:#26233a:#eb6f91:#9ccfd8:#f6c177:#31748f:#65618d:#c4a7e7:#eeeeec"
+    use_system_font = False
+  [[nord]]
+    background_color = "#2E3440"
+    cursor_color = "#D8DEE9"
+    foreground_color = "#e0def4"
+    palette =    "#3B4252:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#8F  BCBB:#ECEFF4"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
