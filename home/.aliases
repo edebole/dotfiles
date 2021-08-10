@@ -25,7 +25,9 @@ alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias open="xdg-open"
 alias ps="ps auxf"
-alias cat="ccat"
+alias cat="bat -p"
+alias df="duf"
+alias tree="broot"
 alias cleanup="sudo pacman -Rns $(pacman -Qtdq)"
 alias unlock="sudo rm /var/lib/pacman/db.lck"
 alias jctl="journalctl -p 3 -xb"
@@ -39,7 +41,7 @@ alias jctl="journalctl -p 3 -xb"
 alias wget="wget -c"
 alias dolar="ruby scripts/dolar_today.rb all"
 alias -g Z='| fzf'
-alias glO=forgit::log
+alias gL=forgit::log
 alias gD=forgit::diff
 alias gA=forgit::add
 alias grH=forgit::reset::head
@@ -49,6 +51,6 @@ alias gclean2=forgit::clean
 alias gsS=forgit::stash::show
 alias gcP=forgit::cherry::pick
 alias grB=forgit::rebase
-alias gcB=forgit::checkout
+alias gcC=forgit::checkout
 alias be='bundle exec'
-
+alias gf=git-fzf

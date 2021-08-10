@@ -1,10 +1,14 @@
 ZSH_THEME="spaceship"
 
 plugins=(
+  aliases
 	git
+  rbenv
+  ruby
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 	colored-man-pages
+  zsh-git-fzf
 )
 
 [ -f $ZSH/oh-my-zsh.sh ] && source $ZSH/oh-my-zsh.sh
@@ -19,6 +23,4 @@ plugins=(
 
 [ -f ~/git/forgit/forgit.plugin.sh ] && source ~/git/forgit/forgit.plugin.sh
 
-[ -d /usr/share/chruby ] && source /usr/share/chruby/chruby.sh
 
-[ -d /usr/share/chruby ] && source /usr/share/chruby/auto.sh

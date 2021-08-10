@@ -120,3 +120,5 @@ bind 'set completion-ignore-case on'
 bind 'TAB:menu-complete'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source /home/edebole/.config/broot/launcher/bash/br

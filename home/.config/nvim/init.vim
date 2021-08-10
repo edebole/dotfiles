@@ -11,7 +11,6 @@ call vundle#begin()
     Plugin 'frazrepo/vim-rainbow'                        " Parentheses Improved
 "{{ File management }}
     Plugin 'scrooloose/nerdtree'                         " added nerdtree
-    Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'     " Highlighting Nerdtree
     Plugin 'ryanoasis/vim-devicons'                      " Icons for Nerdtree
 "{{ Productivity }}
     Plugin 'jiangmiao/auto-pairs'                         " Insert brackets in pair
@@ -21,10 +20,8 @@ call vundle#begin()
     Plugin 'tpope/vim-surround'                           " Change surrounding marks
 "{{ Syntax Highlighting and Colors }}
     Plugin 'kovetskiy/sxhkd-vim'                         " sxhkd highlighting
-    Plugin 'arcticicestudio/nord-vim'                    " Nord theme
+    Plugin 'shaunsingh/nord.nvim'                    " Nord theme
     Plugin 'vim-ruby/vim-ruby'
-    Plugin 'tpope/vim-rails'
-    Plugin 'vim-rubyformat'
     Plugin 'tpope/vim-endwise'
     Plugin 'terryma/vim-multiple-cursors'
     Plugin 'ntpeters/vim-better-whitespace'
@@ -33,9 +30,8 @@ call vundle#begin()
     Plugin 'junegunn/limelight.vim'                      " Hyperfocus on a range
     Plugin 'junegunn/vim-emoji'                          " Vim needs emojis!i
     Plugin 'dense-analysis/ale'
-    "Plugin 'vim-python/python-syntax'                   " Python highlighting
-    "Plugin 'ap/vim-css-color'                           " Color previews for CSS
-    "Plugin 'fatih/vim-go'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'vim-airline/vim-airline'
 
 call vundle#end()
 
@@ -95,7 +91,16 @@ let g:ale_linters_explicit = 1
 let g:ale_completion_enabled = 1
 " Autofix standardrb on save
 let g:ale_lint_on_save = 1
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
+let g:ale_disable_lsp = 1
+let g:airline#extensions#ale#enabled = 1
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+inoremap <C-i> :ALEFix
+let g:diffget_local_map = 'gl'
+let g:diffget_upstream_map = 'gu'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mouse Scrolling
@@ -126,12 +131,6 @@ nmap <silent> gr <Plug>(coc-references)
 map <C-f> :Files<CR>
 map <C-n>t :NERDTreeToggle<CR>
 
-" Remap splits navigation to just CTRL + hjkl
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
 "" Windows
 " Change 2 split windows from vert to horiz or horiz to vert
 map <Leader>th <C-w>t<C-w>H
@@ -142,7 +141,6 @@ noremap <silent> <C-Left> :vertical resize +3<CR>
 noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize +3<CR>
 noremap <silent> <C-Down> :resize -3<CR>
-noremap <silent> <C-I> :ALEFix <CR>
 
 "" Tabs
 nnoremap tt :tabnew<Space>
@@ -160,6 +158,16 @@ nnoremap bfn :enew<Space>
 nnoremap <PageUp> :bp<CR>
 nnoremap <PageDown> :bn<CR>
 nnoremap <S-End> :bd<CR>
+
+"" ALE LINTER
+nmap <silent> <C-l> :ALENextWrap <CR>
+nmap <silent> <C-k> :ALEPreviousWrap <CR>
+noremap <silent> <C-I> :ALEFix <CR>
+
+"" Git fugitive
+nmap <leader> gh :diffget //3<CR>
+nmap <leader> gu :diffget //2<CR>
+nmap <leader> gs :G<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Other Stuff
@@ -185,12 +193,8 @@ let g:coc_global_extensions = [
             \'coc-yaml',
             \'coc-lists',
             \'coc-snippets',
-            \'coc-ultisnips',
             \'coc-python',
-            \'coc-clangd',
-            \'coc-prettier',
             \'coc-solargraph',
-            \'coc-xml',
             \'coc-syntax',
             \'coc-flutter',
             \'coc-git'

@@ -36,6 +36,7 @@ ex() {
       *.deb)       ar x $1      ;;
       *.tar.xz)    tar xf $1    ;;
       *.tar.zst)   unzstd $1    ;;
+      *.oax)       tar -xvf $1  ;;
       *)           echo "'$1' cannot be extracted via ex()" ;;
     esac
   else
@@ -142,4 +143,20 @@ light_cyan() {
 }
 white() {
   color $COLORS[white] $1
+}
+solarkill() {
+  red "Solargraph killed"
+  ps | grep -m1 solargraph | awk '{ print $2 }' | xargs kill -9
+}
+
+rkde() {
+  killall plasmashell
+  kstart plasmashell
+}
+
+fbrd() {
+  local branches branch
+  branches=$(git branch --merged) &&
+  branch=$(echo "$branches" | fzf +m) &&
+    git branch -d $(echo "$branch" | sed "s/.* //") && fbrd
 }
