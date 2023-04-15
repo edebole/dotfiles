@@ -11,6 +11,7 @@
 [alias]
   # Navigate to branches using FZF
   cc = !git checkout "$(git branch | fzf | tr -d '[:space:]')"
+  dd = !git branch --no-color | fzf -m | xargs -I {} git branch -D '{}'
   # Add files using FZF
   af = "!add_fzf() { git status -s | awk '{print $2}' | fzf -m | xargs git add; }; add_fzf"
   # Add files using FZF and immediately commit them

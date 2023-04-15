@@ -25,3 +25,4 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 export SPACESHIP_CONFIG_FILE="$HOME/.config/spaceship.zsh"
+export HIST_EXPIRE_DUPS_FIRST=true

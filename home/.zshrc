@@ -2,12 +2,12 @@ ZSH_THEME="spaceship"
 
 plugins=(
   aliases
-	git
+  git
   rbenv
   ruby
-	zsh-syntax-highlighting
-	zsh-autosuggestions
-	colored-man-pages
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+  colored-man-pages
   zsh-git-fzf
 )
 
@@ -22,5 +22,3 @@ plugins=(
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f ~/git/forgit/forgit.plugin.sh ] && source ~/git/forgit/forgit.plugin.sh
-
-

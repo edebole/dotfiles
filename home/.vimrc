@@ -12,25 +12,19 @@ call vundle#begin()		" required, all plugins must appear after this line.
 
 Plugin 'gmarik/Vundle.vim'							" Vundle
 Plugin 'itchyny/lightline.vim'                      " Lightline statusbar
-Plugin 'vifm/vifm.vim'
-Plugin 'vimwiki/vimwiki'                            " Vim wiki
 Plugin 'scrooloose/nerdtree'						" added nerdtree
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'frazrepo/vim-rainbow'
-Plugin 'vim-python/python-syntax'
 Plugin 'jreybert/vimagit'
 Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'ap/vim-css-color'                           " Color previews for CSS
 Plugin 'tpope/vim-surround'                         " Change surrounding marks
-Plugin 'fatih/vim-go'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'honza/vim-snippets'
-Plugin 'arcticicestudio/nord-vim'
-call vundle#end()		" required, all plugins must appear before this line.
+Plugin 'shaunsingh/nord.nvim'
+call vundle
+#end()		" required, all plugins must appear before this line.
 
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -55,11 +49,12 @@ filetype plugin indent on    " required
 " => Powerline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'simpleblack',
+      \ 'colorscheme': 'nord',
       \ }
 
 " Always show statusline
 set laststatus=2
+set number relativenumber
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
@@ -71,7 +66,6 @@ let g:rehash256 = 1
 
 " Uncomment to prevent non-normal modes showing in powerline and below powerline.
 set noshowmode
-colorscheme nord
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -148,5 +142,3 @@ set guioptions-=L  "remove left-hand scroll bar
 " => Removes pipes | that act as seperators on splits
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set fillchars+=vert:\
-
-
